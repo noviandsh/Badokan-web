@@ -21,8 +21,17 @@ const main = () => {
     event.stopPropagation();
   });
 
+  searchInput.addEventListener('keyup', (event) => {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      searchBtn.click();
+    }
+  });
+
   searchBtn.addEventListener('click', () => {
-    window.location = `${window.location.pathname}?search=${searchInput.value}`;
+    if (searchInput.value !== '') {
+      window.location = `${window.location.pathname}?search=${searchInput.value}`;
+    }
   });
 
   hamburgerButton.addEventListener('click', (event) => {

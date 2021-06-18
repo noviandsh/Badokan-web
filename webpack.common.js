@@ -33,7 +33,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/templates/index.html'),
       filename: 'index.html',
-      favicon: path.resolve(__dirname, 'src/public/images/logo/spoon-fork.svg')
+      favicon: path.resolve(__dirname, 'src/public/images/logo/spoon-fork.svg'),
     }),
     new CopyWebpackPlugin({
       patterns: [

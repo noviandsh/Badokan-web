@@ -1,13 +1,17 @@
-import './post-item';
+import './restaurant-item';
 
 const queryString = require('query-string');
 
 const searchQuery = queryString.parse(window.location.search).search;
 const restaurantData = require('../DATA.json');
 
-class PostList extends HTMLElement {
+const removeDuplicate = (object) => {
+  object.filter((v, i, a) => a.findIndex((t) => (t.id === v.id)) === i);
+  return object;
+};
+class RestaurantList extends HTMLElement {
   connectedCallback() {
-    this.restaurant = restaurantData;
+    this._restaurantData = restaurantData;
     this.render();
   }
 
@@ -15,31 +19,29 @@ class PostList extends HTMLElement {
     let restaurants;
     this.innerHTML = `
             <h2>Rekomendasi Restoran</h2>
-            <div id="posts"></div>
+            <div id="restaurants"></div>
         `;
     if (searchQuery === undefined) {
-      restaurants = this.restaurant.restaurants;
+      restaurants = this._restaurantData.restaurants;
     } else {
-      const searchInCity = this.restaurant.restaurants.filter(
+      const searchInCity = this._restaurantData.restaurants.filter(
         (restaurant) => restaurant.city.toUpperCase().includes(searchQuery.toUpperCase()),
       );
 
-      const searchInName = this.restaurant.restaurants.filter(
+      const searchInName = this._restaurantData.restaurants.filter(
         (restaurant) => restaurant.name.toUpperCase().includes(searchQuery.toUpperCase()),
       );
 
       const searchResult = searchInCity.concat(searchInName);
-      const duplicateRemoved = searchResult
-        .filter((v, i, a) => a.findIndex((t) => (t.id === v.id)) === i);
 
-      restaurants = duplicateRemoved;
+      restaurants = removeDuplicate(searchResult);
     }
 
     if (restaurants.length > 0) {
-      restaurants.forEach((post) => {
-        const postItemElement = document.createElement('post-item');
-        postItemElement.post = post;
-        this.querySelector('#posts').appendChild(postItemElement);
+      restaurants.forEach((item) => {
+        const restaurantItemElement = document.createElement('restaurant-item');
+        restaurantItemElement.data = item;
+        this.querySelector('#restaurants').appendChild(restaurantItemElement);
       });
     } else {
       this.innerHTML += `
@@ -52,4 +54,4 @@ class PostList extends HTMLElement {
   }
 }
 
-customElements.define('post-list', PostList);
+customElements.define('restaurant-list', RestaurantList);

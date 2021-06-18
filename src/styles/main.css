@@ -70,17 +70,18 @@ header {
 /* LOGO END */
 
 #hamburger {
-    box-sizing: border-box;
-    display: block;
     height: 50px;
     width: 50px;
     padding: 10px;
-    padding-top: 23px;
-    margin-top: 10px;
+    padding-top: 11px;
     z-index: 2;
     transition: margin .5s;
     position: absolute;
+    top: 25px;
     right: 30px;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
 }
 
 
@@ -93,7 +94,6 @@ header {
 
 #hamburger>span {
     position: relative;
-    transition: background-color .5s;
 }
 
 #hamburger>span::before {
@@ -281,21 +281,21 @@ main {
     margin-top: 40px;
 }
 
-/* POST LIST START */
+/* restaurant LIST START */
 
-post-list {
+restaurant-list {
     display: block;
     text-align: center;
     position: relative;
 }
 
-post-list h2 {
+restaurant-list h2 {
     width: fit-content;
     margin: 0 auto;
     position: relative;
 }
 
-post-list h2::before {
+restaurant-list h2::before {
     content: '';
     display: block;
     background-image: url('../public/images/logo/header-decoration.svg');
@@ -306,7 +306,7 @@ post-list h2::before {
     top: 8px;
 }
 
-post-list h2::after {
+restaurant-list h2::after {
     content: '';
     display: block;
     background-image: url('../public/images/logo/header-decoration.svg');
@@ -351,7 +351,7 @@ post-list h2::after {
     margin-bottom: 10px;
 }
 
-#posts {
+#restaurants {
     margin: 30px auto auto;
     text-align: left;
     display: grid;
@@ -360,20 +360,19 @@ post-list h2::after {
     padding: 5px;
 }
 
-/* POST LIST END */
+/* restaurant LIST END */
 
-/* POST ITEM START */
+/* restaurant ITEM START */
 
-post-item {
+restaurant-item {
     box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
     width: 100%;
     border-radius: 5px;
     display: block;
     position: relative;
-    border: 1px solid #eee;
 }
 
-post-item::before {
+restaurant-item::before {
     content: "";
     width: 0;
     height: 0;
@@ -384,7 +383,7 @@ post-item::before {
     left: -10px;
 }
 
-post-item[data-city]::after {
+restaurant-item[data-city]::after {
     content: attr(data-city);
     color: black;
     font-weight: 400;
@@ -400,38 +399,36 @@ post-item[data-city]::after {
     border-radius: 6px 0px 30px 0;
 }
 
-.post-item__content {
+restaurant-item .content {
     padding: 5px 12px 22px 12px;
 }
 
-.post-item__thumbnail {
+restaurant-item .thumbnail {
     width: 100%;
+    height: 270px;
+    object-fit: cover;
+    object-position: center;
     border-radius: 5px 5px 0 0;
 }
 
-.post-item__date {
+restaurant-item .rating {
     font-size: 10px;
     text-transform: uppercase;
     color: #999;
 }
 
-.post-item__date__author {
-    color: red;
-    text-decoration: none;
-}
-
-.post-item__title {
+restaurant-item .title {
     font-weight: 500;
     font-size: 18px;
     margin-top: 16px;
     transition: 0.3s opacity;
 }
 
-.post-item__title:hover {
+restaurant-item .title:hover {
     opacity: 0.5;
 }
 
-.post-item__title a {
+restaurant-item .title a {
     display: inline-block;
     text-decoration: none;
     color: inherit;
@@ -440,7 +437,7 @@ post-item[data-city]::after {
     line-height: 45px;
 }
 
-.post-item__description {
+restaurant-item .description {
     margin-top: 16px;
     font-size: 14px;
     line-height: 1.5em;
@@ -451,7 +448,7 @@ post-item[data-city]::after {
     -webkit-box-orient: vertical;
 }
 
-/* POST ITEM END */
+/* restaurant ITEM END */
 
 /* MAIN CONTENT END */
 
@@ -495,7 +492,7 @@ footer>.inner {
     #hamburger.open {
         margin-right: 200px;
     }
-    post-list h2::before, post-list h2::after {
+    restaurant-list h2::before, restaurant-list h2::after {
         display: none;
     }
 }
@@ -503,7 +500,7 @@ footer>.inner {
 /* Small devices (portrait tablets and large phones, 600px and up) */
 
 @media only screen and (min-width: 600px) {
-    .post-item__content {
+    restaurant-item .content {
         padding: 16px 32px 32px 32px;
     }
     footer>.inner {
@@ -547,7 +544,7 @@ footer>.inner {
     }
 
 
-    #posts {
+    #restaurants {
         grid-template-columns: 1fr 1fr;
     }
 }
@@ -558,7 +555,7 @@ footer>.inner {
     main{
         width: 75%;
     }
-    #posts {
+    #restaurants {
         grid-template-columns: 1fr 1fr;
     }
 }
@@ -566,7 +563,7 @@ footer>.inner {
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 
 @media only screen and (min-width: 1200px) {
-    #posts {
+    #restaurants {
         grid-template-columns: 1fr 1fr 1fr;
     }
 }
