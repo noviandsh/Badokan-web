@@ -4,12 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | Badokan</title>
+    <title>Badokan</title>
+    <meta name="theme-color" content="#ffc107">
 </head>
 
 <body>
-    <a href="#main-content" class="skip-link">Skip to content</a>
     <header>
+        <a href="#main-content" class="skip-link">Skip to content</a>
         <div id="logo">
             <img src="./images/logo/spoon-fork.svg" alt="">
             <div>Badokan</div>
@@ -18,8 +19,8 @@
         <button id="hamburger" aria-label="Menu navigasi"><span></span></button>
         <nav>
             <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="#">Favorite</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#/favorite">Favorite</a></li>
                 <li><a href="https://doyancoding.com/about">About Us</a></li>
             </ul>
         </nav>
@@ -34,11 +35,9 @@
             <h1 class="title">Temukan Makanan Enak di Seluruh Indonesia</h1>
             <p class="tagline">Kurus atau gendut adalah pilihan, tapi makan enak adalah kewajiban</p>
         </div>
+        <div class="blur-effect"></div>
     </div>
-    <div class="blur-effect"></div>
-    <main id="main-content">
-        <restaurant-list></restaurant-list>
-    </main>
+    <main id="main-content"></main>
     <footer>
         <div class="inner">
             <div id="logo">

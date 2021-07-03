@@ -12,7 +12,7 @@ const main = () => {
   }
 
   searchInput.addEventListener('focus', (event) => {
-    searchInput.placeholder = 'Nama restoran atau nama kota';
+    searchInput.placeholder = 'Masukkan nama restoran';
     event.stopPropagation();
   });
 
@@ -30,7 +30,9 @@ const main = () => {
 
   searchBtn.addEventListener('click', () => {
     if (searchInput.value !== '') {
-      window.location = `${window.location.pathname}?search=${searchInput.value}`;
+      window.location = `#/search?query=${searchInput.value}`;
+    } else {
+      window.location = '#';
     }
   });
 
