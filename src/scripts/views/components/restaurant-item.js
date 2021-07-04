@@ -9,7 +9,9 @@ class RestaurantItem extends HTMLElement {
   render() {
     this.setAttribute('data-city', this._restaurant.city);
     this.innerHTML = `
-            <img class="thumbnail" src="${restaurantData.imageSmall(this._restaurant.pictureId)}" alt="Restoran ${this._restaurant.name} yang berada di kota ${this._restaurant.city}">
+            <div class="restaurant-item-thumbnail">
+              <img class="lazyload" data-src="${restaurantData.imageSmall(this._restaurant.pictureId)}" alt="Restoran ${this._restaurant.name} yang berada di kota ${this._restaurant.city}">
+            </div>
             <div class="content">
                 <p class="rating">Rating restoran ${this._restaurant.rating}
                 </p>

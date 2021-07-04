@@ -1,6 +1,8 @@
 import 'regenerator-runtime'; /* for async await transpile */
-import '@fortawesome/fontawesome-free/js/all';
 import '../styles/main.css';
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
+import 'lazysizes/plugins/unveilhooks/ls.unveilhooks';
 import main from './main';
 import App from './views/app';
 import swRegister from './utils/sw-register';

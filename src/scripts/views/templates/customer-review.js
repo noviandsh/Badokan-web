@@ -5,7 +5,7 @@ const customerReview = async (reviews) => {
       <div class="review-card">
         <h4>${review.name}</h4>
         <p>"${review.review}"</p>
-        <div class="review-date">${review.date} <i class="far fa-clock"></i></div>
+        <div class="review-date">${review.date} <i class="material-icons">schedule</i></div>
       </div>
     `;
   });

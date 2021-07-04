@@ -75,6 +75,7 @@ header {
 
 #logo>img {
     height: 50px;
+    width: 50px;
     margin-right: 15px;
 }
 
@@ -197,7 +198,6 @@ nav>ul>li>a:hover {
     height: 500px;
     width: 100%;
     text-align: center;
-    background-image: url('../public/images/heros/hero-image_4.jpg');
     background-position: center;
     background-size: cover;
     color: white;
@@ -260,6 +260,9 @@ main {
     align-items: center;
     flex-wrap: nowrap;
     flex-direction: row;
+}
+#search-box>i{
+    font-size: 1.1em;
 }
 #search-box>input{
     width: 100%;
@@ -422,7 +425,11 @@ restaurant-item .content {
     padding: 5px 12px 22px 12px;
 }
 
-restaurant-item .thumbnail {
+.restaurant-item-thumbnail {
+    width: 100%;
+    height: 270px;
+}
+.restaurant-item-thumbnail>img {
     width: 100%;
     height: 270px;
     object-fit: cover;
@@ -475,7 +482,7 @@ restaurant-item .description {
     margin-bottom: 15px;
     position: relative;
 }
-#detail-image>img{
+#detail-image img{
     width: 100%;
 }
 #detail-image>span{
@@ -507,6 +514,10 @@ restaurant-item .description {
     justify-content: space-between;
     padding: 13px 5px 0 20px;
 }
+#detail-rating{
+    display: flex;
+    column-gap: 10px;
+}
 #restaurant-categories>ul{
     margin-top: 20px;
 }
@@ -531,7 +542,9 @@ restaurant-item .description {
     justify-content: space-between;
     padding: 13px 5px 0 20px;
 }
-
+#restaurant-location{
+    display: flex;
+}
 #detail-favorite>button{
     background: none;
     border: 0;
@@ -561,6 +574,8 @@ restaurant-detail h2{
 
 #menu-list h3{
     margin-bottom: 10px;
+    display: inline-flex;
+    column-gap: 10px;
 }
 
 #menu-container ul>li{
@@ -592,9 +607,11 @@ restaurant-detail h2{
     font-size: .8em;
     bottom: 5px;
     right: 10px;
+    display: flex;
 }
-.review-date>svg{
+.review-date>i{
     margin-left: 2.5px;
+    font-size: 1.4em;
 }
 
 #review-form{
@@ -634,7 +651,7 @@ restaurant-detail h2{
     padding: 9px 25px;
     font-size: 1.1em;
     font-weight: 600;
-    color: white;
+    color: black;
     cursor: pointer;
 }
 
@@ -649,7 +666,6 @@ restaurant-detail h2{
 /* FOOTER START */
 
 footer {
-    background-image: url('../public/images/heros/hero-image_2.jpg');
     background-position: center;
     background-size: cover;
     height: 200px;
@@ -713,6 +729,7 @@ footer>.inner {
     }
     #logo>img{
         height: 60px;
+        width: 60px;
     }
     #hamburger{
         top: 25px;

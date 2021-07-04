@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Badokan</title>
+    <link rel="preload" id="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap" as="style" onload="this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap">
+    </noscript>
     <meta name="theme-color" content="#ffc107">
 </head>
 
@@ -15,7 +19,7 @@
             <img src="./images/logo/spoon-fork.svg" alt="">
             <div>Badokan</div>
         </div>
-        
+
         <button id="hamburger" aria-label="Menu navigasi"><span></span></button>
         <nav>
             <ul>
@@ -25,9 +29,9 @@
             </ul>
         </nav>
     </header>
-    <div class="hero">
+    <div class="hero lazyload" data-bg="./images/heros/hero-image_4.jpg">
         <div id="search-box">
-            <i class="fas fa-search"></i>
+            <i class="material-icons">search</i>
             <input type="text" name="search-input" id="search-input" placeholder="Pencarian">
             <button id="search-btn">Cari</button>
         </div>
@@ -38,7 +42,7 @@
         <div class="blur-effect"></div>
     </div>
     <main id="main-content"></main>
-    <footer>
+    <footer class="lazyload" data-bg="./images/heros/hero-image_2.jpg">
         <div class="inner">
             <div id="logo">
                 <img src="./images/logo/spoon-fork.svg" alt="">

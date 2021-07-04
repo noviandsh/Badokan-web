@@ -17,15 +17,20 @@ class RestaurantDetail extends HTMLElement {
   render() {
     this.innerHTML = `
           <div id="detail-image">
-            <img src="${restaurantData.imageLarge(this._searchResult.pictureId)}"/>
+            <picture>
+              <source media="(max-width: 600px)" srcset="${restaurantData.imageSmall(this._searchResult.pictureId)}">
+              <img alt="Restoran ${this._searchResult.name} yang berada di kota ${this._searchResult.city}" src="${restaurantData.imageLarge(this._searchResult.pictureId)}"/>
+            </picture>
             <div id="image-attr">
-              <div id="detail-rating"><i class="fas fa-star"></i> ${this._searchResult.rating}</div>
+              <div id="detail-rating"><i class="material-icons">star</i> ${this._searchResult.rating}</div>
               <div id="detail-favorite"></div>
             </div>
             <div id="restaurant-categories">
               <ul>${dataList(this._searchResult.categories)}</ul>
             </div>
-            <i class="fas fa-map-marker-alt"></i> <a href="https://www.google.com/maps/search/${this._searchResult.address.replace(/\s/g, '+')}+${this._searchResult.city.replace(/\s/g, '+')}" target="_blank"> ${this._searchResult.address}, ${this._searchResult.city}</a>
+            <div id="restaurant-location">
+              <i class="material-icons">location_on</i> <a href="https://www.google.com/maps/search/${this._searchResult.address.replace(/\s/g, '+')}+${this._searchResult.city.replace(/\s/g, '+')}" target="_blank"> ${this._searchResult.address}, ${this._searchResult.city}</a>
+            </div>
           </div>
           <h2>${this._searchResult.name}</h2>
           <p>${this._searchResult.description}</p>
@@ -34,13 +39,13 @@ class RestaurantDetail extends HTMLElement {
             <div id="menu-list">
               <div id="food-menu">
                 <h3>
-                  <i class="fas fa-utensils"></i> <span> Makanan </span> <i class="fas fa-utensils"></i>
+                  <i class="material-icons">restaurant</i> <span> Makanan </span> <i class="material-icons">restaurant</i>
                 </h3>
                 <ul>${dataList(this._searchResult.menus.foods)}</ul>
               </div>
               <div id="food-menu">
                 <h3>
-                  <i class="fas fa-cocktail"></i> <span> Minuman </span> <i class="fas fa-cocktail"></i>
+                  <i class="material-icons">local_cafe</i> <span> Minuman </span> <i class="material-icons">local_cafe</i>
                 </h3>
                 <ul>${dataList(this._searchResult.menus.drinks)}</ul>
               </div>
@@ -61,15 +66,6 @@ class RestaurantDetail extends HTMLElement {
             </div>
           </div>
         `;
-    // this._searchResult.customerReviews.reverse().forEach((review) => {
-    //   this.querySelector('#customer-review').innerHTML += `
-    //     <div class="review-card">
-    //       <h4>${review.name}</h4>
-    //       <p>"${review.review}"</p>
-    //       <div class="review-date">${review.date} <i class="far fa-clock"></i></div>
-    //     </div>
-    //   `;
-    // });
   }
 }
 
