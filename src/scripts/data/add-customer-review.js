@@ -1,6 +1,7 @@
 /* eslint-disable no-alert */
 import API_ENDPOINT from '../globals/api-endpoint';
 import App from '../views/app';
+import Swal from 'sweetalert2';
 
 const addCustomerReview = {
   async fetchReview(reviews) {
@@ -14,13 +15,41 @@ const addCustomerReview = {
     })
       .then((response) => response.json())
       .then((responseJson) => {
-        const app = new App(document.getElementById('main-content'));
-        app.renderPage();
-        console.log(responseJson.message);
-        alert('Berhasil menambahkan ulasan');
+        if (responseJson.error) {
+          return {
+            icon: 'error',
+            title: 'Gagal menambahkan ulasan',
+            text: 'pastikan kolom nama dan ulasan telah terisi!'
+          };
+        } else {
+          return {
+            icon: 'success',
+            title: 'Terima kasih',
+            text: 'Ulasan berhasil dikirim'
+          };
+        }
+      })
+      .then((alert) => {
+        Swal.fire(alert)
+        .then(() => {
+          if (alert.icon === 'success') {
+            window.location.reload();
+          }
+        });
       })
       .catch((error) => {
-        console.log(error);
+        if(!window.navigator.onLine){
+          Swal.fire(
+            'Gagal menambahkan ulasan',
+            'pastikan koneksi internet anda tersambung!',
+            'error'
+          );
+        } else {
+          return {
+            error: true,
+            message: error
+          };
+        }
       });
   },
 

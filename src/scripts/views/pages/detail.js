@@ -29,7 +29,6 @@ const Home = {
         review: document.getElementById('review-field').value,
       };
       await addCustomerReview.fetchReview(newReview);
-      this.afterRender();
     });
 
     LikeButtonInitiator.init({
