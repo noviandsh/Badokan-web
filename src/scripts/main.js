@@ -41,6 +41,15 @@ const main = () => {
     navBox.classList.toggle('open');
     event.stopPropagation();
   });
+
+  document.querySelector('footer').addEventListener('lazybeforeunveil', function(e){
+    let bg = e.target.getAttribute('data-bg');
+    console.log('lah');
+    if(bg){
+      console.log('kok');
+      e.target.style.backgroundImage = 'url(' + bg + ')';
+    }
+  });
 };
 
 export default main;

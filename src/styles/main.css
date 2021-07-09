@@ -202,6 +202,7 @@ nav>ul>li>a:hover {
     background-size: cover;
     color: white;
     font-family: 'Arima Madurai', cursive;
+    background-image: url(../public/images/heros/hero-image_4_sm.jpg);
 }
 
 .hero>.inner {
@@ -674,6 +675,7 @@ footer {
     font-weight: 700;
     font-size: 16px;
     color: white;
+    background-image: url(../public/images/heros/hero-image_2_sm.jpg);
 }
 
 footer>.inner {
@@ -734,6 +736,9 @@ footer>.inner {
     #hamburger{
         top: 25px;
     }
+    .hero{
+        background-image: url('../public/images/heros/hero-image_4.jpg');
+    }
     restaurant-item .content {
         padding: 16px 32px 32px 32px;
     }
@@ -742,6 +747,9 @@ footer>.inner {
     }
     #customer-review{
         grid-template-columns: 1fr 1fr;
+    }
+    footer{
+        background-image: url('../public/images/heros/hero-image_2.jpg');
     }
     footer>.inner {
         padding: 0 70px;
