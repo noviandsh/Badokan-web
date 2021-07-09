@@ -12,6 +12,6 @@ app.get('/', (request, response) => {
 });
 
 // eslint-disable-next-line no-unused-vars
-const listener = app.listen(PORT, () => {
+const listener = app.listen(process.env.PORT || PORT, () => {
   console.log(`Your app is listening on port ${PORT}`);
 });

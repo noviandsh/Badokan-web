@@ -11,6 +11,9 @@
     "e2e": "codeceptjs run --steps",
     "e2e-nostep": "codeceptjs run"
   },
+  "engines": {
+    "node": "12.x"
+  },
   "keywords": [],
   "author": "your_name <your.email@domain.com>",
   "license": "ISC",
