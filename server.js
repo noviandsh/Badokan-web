@@ -1,10 +1,12 @@
 const path = require('path');
 const express = require('express');
+const enforce = require('express-sslify');
 
 const PORT = 8080;
 
 const app = express();
 
+app.use(enforce.HTTPS());
 app.use(express.static('dist'));
 
 app.get('/', (request, response) => {
