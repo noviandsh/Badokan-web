@@ -9,7 +9,7 @@ describe('Liking A Restaurant', () => {
   beforeEach(() => {
     addLikeButtonContainer();
   });
-  
+
   it('should show the like button when the restaurant has not been liked before', async () => {
     await LikeButtonInitiator.init({
       likeButtonContainer: document.querySelector('#likeButtonContainer'),

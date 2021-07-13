@@ -42,12 +42,10 @@ const main = () => {
     event.stopPropagation();
   });
 
-  document.querySelector('footer').addEventListener('lazybeforeunveil', function(e){
-    let bg = e.target.getAttribute('data-bg');
-    console.log('lah');
-    if(bg){
-      console.log('kok');
-      e.target.style.backgroundImage = 'url(' + bg + ')';
+  document.querySelector('footer').addEventListener('lazybeforeunveil', (e) => {
+    const bg = e.target.getAttribute('data-bg');
+    if (bg) {
+      e.target.style.backgroundImage = `url(${bg})`;
     }
   });
 };

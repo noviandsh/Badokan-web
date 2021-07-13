@@ -29,7 +29,7 @@ class RestaurantDetail extends HTMLElement {
               <ul>${dataList(this._searchResult.categories)}</ul>
             </div>
             <div id="restaurant-location">
-              <i class="material-icons">location_on</i> <a href="https://www.google.com/maps/search/${this._searchResult.address.replace(/\s/g, '+')}+${this._searchResult.city.replace(/\s/g, '+')}" target="_blank"> ${this._searchResult.address}, ${this._searchResult.city}</a>
+              <i class="material-icons">location_on</i> <a href="https://www.google.com/maps/search/${this._searchResult.address.replace(/\s/g, '+')}+${this._searchResult.city.replace(/\s/g, '+')}" target="_blank" rel="noreferrer"> ${this._searchResult.address}, ${this._searchResult.city}</a>
             </div>
           </div>
           <h2>${this._searchResult.name}</h2>

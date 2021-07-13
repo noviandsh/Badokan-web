@@ -1,3 +1,5 @@
+/* eslint-disable no-plusplus */
+/* eslint-disable no-await-in-loop */
 Feature('Searching Restaurant');
 
 const assert = require('assert');
@@ -27,5 +29,5 @@ Scenario('searching restaurant', async ({ I }) => {
   matchingRestaurant.forEach(async (name, index) => {
     const visibleName = await I.grabTextFrom(locate(restaurantNameElement).at(index + 1));
     assert.strictEqual(name, visibleName);
-  })
+  });
 });

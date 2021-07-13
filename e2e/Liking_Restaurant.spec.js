@@ -22,10 +22,10 @@ Scenario('liking and unliking one restaurant', async ({ I }) => {
   const firstRestaurant = locate('restaurant-item .title>a').first();
   const firstRestaurantName = await I.grabTextFrom(firstRestaurant);
   I.click(firstRestaurant);
-  
+
   I.seeElement('#likeButton');
   I.click('#likeButton');
-  
+
   I.amOnPage('/#/favorite');
   I.seeElement('restaurant-item');
   const likedRestaurantName = await I.grabTextFrom('restaurant-item .title>a');
@@ -35,7 +35,7 @@ Scenario('liking and unliking one restaurant', async ({ I }) => {
   I.click(locate('restaurant-item .title>a'));
   I.seeElement('#likeButton');
   I.click('#likeButton');
-  
+
   I.amOnPage('/#/favorite');
   I.dontSee(likedRestaurantName);
 });

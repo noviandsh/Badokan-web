@@ -59,4 +59,4 @@ const itActsAsFavoriteRestaurantModel = (favoriteRestaurant) => {
   });
 };
 
-export { itActsAsFavoriteRestaurantModel };
+export default itActsAsFavoriteRestaurantModel;

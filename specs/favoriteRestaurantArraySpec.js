@@ -1,4 +1,4 @@
-import { itActsAsFavoriteRestaurantModel } from './contract/favoriteRestaurantContract';
+import itActsAsFavoriteRestaurantModel from './contract/favoriteRestaurantContract';
 
 let favoriteRestaurants = [];
 
@@ -34,6 +34,7 @@ const FavoriteRestaurantArray = {
 };
 
 describe('Favorite Restaurant Array Contract Test Implementation', () => {
+  // eslint-disable-next-line no-return-assign
   afterEach(() => favoriteRestaurants = []);
 
   itActsAsFavoriteRestaurantModel(FavoriteRestaurantArray);

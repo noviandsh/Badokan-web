@@ -15,11 +15,10 @@ const Search = {
     pageHeader.innerHTML = 'Restoran Favorit';
 
     if (restaurantContainer.innerHTML === '') {
-      document.querySelector('restaurant-list').innerHTML += `<span id="alert">Belum ada restoran yang anda sukai.</span>`;
+      document.querySelector('restaurant-list').innerHTML += '<span id="alert">Belum ada restoran yang anda sukai.</span>';
     }
 
     document.title = 'Favorite | Badokan';
-    
   },
 };
 
