@@ -48,6 +48,7 @@ const addCustomerReview = {
             error,
             'error',
           );
+          console.log(error)
         }
       });
   },
